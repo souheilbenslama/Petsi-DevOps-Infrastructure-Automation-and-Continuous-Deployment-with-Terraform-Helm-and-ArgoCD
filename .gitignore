@@ -1,2 +1,4 @@
 ./automation/.terraform
-automation/.terraform/*
+automation/provisionning-stack/.terraform/*
+automation/*/.terraform/*
+automation/*/.terraform.lock.hcl

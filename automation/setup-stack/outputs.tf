@@ -1,5 +1,5 @@
 output "kube_config" {
-  value = azurerm_kubernetes_cluster.dev.kube_config_raw
+  value = data.terraform_remote_state.aks.outputs.kube_config
   sensitive = true
 }
 

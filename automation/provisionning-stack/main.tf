@@ -26,7 +26,8 @@ resource "azurerm_kubernetes_cluster" "dev" {
 }
 
 
-provider "kubernetes" {
+locals {
+
   host                   = azurerm_kubernetes_cluster.dev.kube_config.0.host
   username               = azurerm_kubernetes_cluster.dev.kube_config.0.username
   password               = azurerm_kubernetes_cluster.dev.kube_config.0.password
@@ -35,10 +36,24 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(azurerm_kubernetes_cluster.dev.kube_config.0.cluster_ca_certificate)
 }
 
-module "basic_setup" {
-  source    = "./modules/basic_setup"
-  providers = {
-    kubernetes = kubernetes
-  }
-  environment = "dev"
+
+provider "kubernetes" {
+  host                   = local.host
+  username               = local.username
+  client_certificate     = local.client_certificate
+  client_key             = local.client_key
+  cluster_ca_certificate = local.cluster_ca_certificate
 }
+
+
+provider "helm" {
+  kubernetes {
+    host                   = local.host
+    username               = local.username
+    client_certificate     = local.client_certificate
+    client_key             = local.client_key
+    cluster_ca_certificate = local.cluster_ca_certificate
+  }
+
+}
+
