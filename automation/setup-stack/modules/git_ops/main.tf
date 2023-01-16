@@ -7,8 +7,8 @@ resource "helm_release" Argo {
 }
 
 #resource "helm_release" ArgoApp {
-  name       = "my-argo-petsi-app-release"
-  repository = "https://github.com/souheilbenslama/souheilbenslama.github.io/charts"
-  chart      = "argo-petsi-app"
-  namespace = var.namespace
-}
+#  name       = "my-argo-petsi-app-release"
+#  repository = "https://github.com/souheilbenslama/souheilbenslama.github.io/charts"
+#  chart      = "argo-petsi-app"
+#  namespace = var.namespace
+#}
