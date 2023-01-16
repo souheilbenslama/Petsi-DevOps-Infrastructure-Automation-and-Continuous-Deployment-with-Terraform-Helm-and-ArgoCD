@@ -4,6 +4,6 @@ output "kube_config" {
 }
 
 output "namespace_id" {
-  value = module.basic_setup.namespace_id
+  value = module.basic_setup.petsi_back_namespace_id
   description = "Namespace ID"
 }

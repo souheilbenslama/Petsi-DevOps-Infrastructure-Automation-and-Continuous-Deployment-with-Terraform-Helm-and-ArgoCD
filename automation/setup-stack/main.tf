@@ -55,7 +55,21 @@ module "setup_gitops" {
   providers = {
     helm = helm
   }
-  namespace = module.basic_setup.namespace_id
+  namespace = module.basic_setup.argo_namespace_id
   environment = "dev"
 }
+
+
+module "setup_petsi" {
+  source    = "../setup-stack/modules/petsi-deploy"
+  providers = {
+    helm = helm
+  }
+  namespace = module.basic_setup.petsi_back_namespace_id
+  environment = "dev"
+}
+
+
+
+
 

@@ -1,12 +1,3 @@
-resource "kubernetes_namespace" "dev" {
-  metadata {
-    labels = {
-      environment = var.environment
-    }
-    name = "petsi-back"
-  }
-}
-
 
 resource "kubernetes_namespace" "argocd" {
   metadata {
@@ -14,5 +5,14 @@ resource "kubernetes_namespace" "argocd" {
       environment = var.environment
     }
     name = "gitops"
+  }
+}
+
+resource "kubernetes_namespace" "petsi-back" {
+  metadata {
+    labels = {
+      environment = var.environment
+    }
+    name = "petsi-back"
   }
 }

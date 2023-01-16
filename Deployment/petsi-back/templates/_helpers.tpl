@@ -48,6 +48,7 @@ Selector labels
 {{- define "petsi-back.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "petsi-back.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+color: {{ .Values.Deployment.labels.color}}
 {{- end }}
 
 {{/*

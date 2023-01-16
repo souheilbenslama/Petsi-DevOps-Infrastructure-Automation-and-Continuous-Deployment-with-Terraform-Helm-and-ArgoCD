@@ -5,3 +5,10 @@ resource "helm_release" Argo {
   version    = "5.16.0"
   namespace = var.namespace
 }
+
+resource "helm_release" Nginx-ingress {
+  name       = "petsi-ingress"
+  repository = "https://kubernetes.github.io/ingress-nginx/"
+  chart      = "ingress-nginx"
+  version    = "4.4.2"
+}
