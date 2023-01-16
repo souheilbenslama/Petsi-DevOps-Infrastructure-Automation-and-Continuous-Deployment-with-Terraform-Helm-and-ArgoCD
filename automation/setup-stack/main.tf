@@ -45,6 +45,7 @@ module "basic_setup" {
   source    = "../setup-stack/modules/basic_setup"
   providers = {
     kubernetes = kubernetes
+    helm = helm
   }
   environment = "dev"
 }

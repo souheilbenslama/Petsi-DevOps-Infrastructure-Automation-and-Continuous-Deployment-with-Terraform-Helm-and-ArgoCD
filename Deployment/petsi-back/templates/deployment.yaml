@@ -47,6 +47,13 @@ spec:
           #  httpGet:
           #    path: /
           #    port: http
+          env:
+            - name: DB_CONNECTION_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: db-connection-string
+                  key: connection-string
+
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

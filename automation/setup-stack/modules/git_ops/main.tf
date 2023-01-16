@@ -6,9 +6,9 @@ resource "helm_release" Argo {
   namespace = var.namespace
 }
 
-resource "helm_release" Nginx-ingress {
-  name       = "petsi-ingress"
-  repository = "https://kubernetes.github.io/ingress-nginx/"
-  chart      = "ingress-nginx"
-  version    = "4.4.2"
+#resource "helm_release" ArgoApp {
+  name       = "my-argo-petsi-app-release"
+  repository = "https://github.com/souheilbenslama/souheilbenslama.github.io/charts"
+  chart      = "argo-petsi-app"
+  namespace = var.namespace
 }
