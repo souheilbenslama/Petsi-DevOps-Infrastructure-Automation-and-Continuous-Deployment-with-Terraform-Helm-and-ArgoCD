@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: app-config
 data:
-  port: {{ .Values.http.port }}
+  port: "4000"
