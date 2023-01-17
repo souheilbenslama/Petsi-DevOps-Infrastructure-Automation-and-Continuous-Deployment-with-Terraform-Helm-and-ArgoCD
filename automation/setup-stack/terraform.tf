@@ -20,9 +20,9 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name = "cloud-shell-storage-westeurope"
-    container_name = "terastate"
-    storage_account_name = "csb100320004f3944c2"
+    resource_group_name = "petsi_rg"
+    container_name = "state"
+    storage_account_name = "petsi"
     key = "setup-stack.json"
   }
 

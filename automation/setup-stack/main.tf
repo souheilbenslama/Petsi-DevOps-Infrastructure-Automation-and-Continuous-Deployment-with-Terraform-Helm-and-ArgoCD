@@ -3,9 +3,9 @@
 data "terraform_remote_state" "aks" {
   backend = "azurerm"
   config = {
-    resource_group_name = "cloud-shell-storage-westeurope"
-    container_name = "terastate"
-    storage_account_name = "csb100320004f3944c2"
+    resource_group_name = "petsi_rg"
+    container_name = "state"
+    storage_account_name = "petsi"
     key = "provisionning-stack.json"
 
   }
@@ -61,14 +61,7 @@ module "setup_gitops" {
 }
 
 
-module "setup_petsi" {
-  source    = "../setup-stack/modules/petsi-deploy"
-  providers = {
-    helm = helm
-  }
-  namespace = module.basic_setup.petsi_back_namespace_id
-  environment = "dev"
-}
+
 
 
 
