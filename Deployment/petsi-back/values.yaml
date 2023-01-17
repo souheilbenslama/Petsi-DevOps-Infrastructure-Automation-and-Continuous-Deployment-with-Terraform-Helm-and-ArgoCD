@@ -10,7 +10,7 @@ image:
   repository: souheilbenslama/petpp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 6
+  tag: 8
   exposedPort: 4000
 
 # container http port
