@@ -4,8 +4,8 @@ output "argo_namespace_id" {
 
 }
 
-output "petsi_back_namespace_id" {
+output "observability_namespace_id" {
   description = "namespace id"
-  value = kubernetes_namespace.petsi-back.id
+  value = kubernetes_namespace.observability.id
 
 }

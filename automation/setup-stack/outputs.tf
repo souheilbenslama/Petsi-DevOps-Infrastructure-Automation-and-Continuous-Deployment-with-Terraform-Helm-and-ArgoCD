@@ -3,7 +3,3 @@ output "kube_config" {
   sensitive = true
 }
 
-output "namespace_id" {
-  value = module.basic_setup.petsi_back_namespace_id
-  description = "Namespace ID"
-}

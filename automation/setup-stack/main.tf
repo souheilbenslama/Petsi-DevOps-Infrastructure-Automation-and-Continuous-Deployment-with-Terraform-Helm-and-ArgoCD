@@ -60,7 +60,14 @@ module "setup_gitops" {
   environment = "dev"
 }
 
-
+module "observability_setup" {
+  source    = "../setup-stack/modules/observability_setup"
+  providers = {
+    helm = helm
+  }
+  namespace = module.basic_setup.observability_namespace_id
+  environment = "dev"
+}
 
 
 
