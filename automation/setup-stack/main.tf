@@ -60,15 +60,15 @@ module "setup_gitops" {
   environment = "dev"
 }
 
-
-module "setup_petsi" {
-  source    = "../setup-stack/modules/petsi-deploy"
+module "observability_setup" {
+  source    = "../setup-stack/modules/observability_setup"
   providers = {
     helm = helm
   }
-  namespace = module.basic_setup.petsi_back_namespace_id
+  namespace = module.basic_setup.observability_namespace_id
   environment = "dev"
 }
+
 
 
 
